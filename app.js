@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use(express.static('public'));
+
 app.listen(3030, () => {
     console.log('Server funcionando')
 });
@@ -38,4 +40,3 @@ app.get('/turing', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/turing.html'))
 });
 
-app.use(express.static('public'));
